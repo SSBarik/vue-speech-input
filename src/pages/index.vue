@@ -3,6 +3,7 @@
     <v-container fluid>
       <div class="text-center">
       <h1 class="display-1">Vue Speech Input</h1>
+      <p class="pa-2">*Compatible only with Chrome & Firefox</p>
       <p class="pa-2">Press the mic to start recording...</p>
       <img :src="require('@/assets/logo.png')" height="100">
       </div>
