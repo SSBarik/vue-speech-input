@@ -24,6 +24,11 @@
       </v-layout>
 
     </v-container>
+
+    <div id="browser-support" class="pa-2 overline">
+      <span>Browser Support: Chrome, Firefox</span>
+    </div>
+    
   </v-app>
 </template>
 
@@ -54,5 +59,15 @@ export default {
 <style>
 #app {
   background-color: #FAFAFA;
+}
+
+#browser-support {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  width: auto;
+  height: auto;
+  background-color:#f1f1f1;
+  border-radius: 10px 0 0 0;
 }
 </style>
