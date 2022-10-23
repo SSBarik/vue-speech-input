@@ -9,15 +9,16 @@
 
       <!-- Speech Input Component -->
       <SpeechInput :text.sync="text" en-US @speechend="speechEnd" />
+      
     </v-container>
 
     <div id="browser-support" class="pa-2 overline">
-      <span
-        ><a
+      <span>
+        <a
           href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition#browser_compatibility"
-          >Check compatibile browsers</a
-        ></span
-      >
+          >Check compatibile browsers
+        </a>
+      </span>
     </div>
   </v-app>
 </template>

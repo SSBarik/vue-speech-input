@@ -1,27 +1,28 @@
 <template>
-  <div>
-    <v-textarea
-      v-if="!error"
-      label="Speech to Text"
-      v-model="text"
-      textarea
-      outlined
-    ></v-textarea>
-
-    <v-container class="speechCard">
-      <v-card max-width="400px" class="speechCard">
+  <v-layout row wrap justify-center class="mt-4 pa-2">
+    <v-flex xs12 sm10 text-xs-center>
+      <v-textarea
+        v-if="!error"
+        label="Speech to Text"
+        v-model="text"
+        textarea
+        outlined
+      ></v-textarea>
+    </v-flex>
+    <v-flex xs12 sm8 md4 text-xs-center>
+      <v-card>
         <v-card-text>
-          <v-layout row wrap justify-center class="mt-4 pa-2">
+          <v-layout row wrap justify-space-around>
             <v-flex xs8 sm9 text-xs-center>
               <!-- error notification -->
-              <p v-if="error" class="red--text">{{ error }}</p>
+              <p v-if="error" class="red--text mb-0 text-center">{{ error }}</p>
               <!-- Run time Text in speech box -->
               <p v-else class="mb-0">
                 <span>{{ runtimeTranscription }}</span>
               </p>
             </v-flex>
             <!-- On Off Toggle Btn -->
-            <v-flex xs2 sm1 text-xs-center>
+            <v-flex xs2 sm1 text-xs-center v-if="!error">
               <v-btn
                 dark
                 @click.stop="
@@ -39,8 +40,8 @@
           </v-layout>
         </v-card-text>
       </v-card>
-    </v-container>
-  </div>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
@@ -65,7 +66,7 @@ export default {
       error: false,
       speaking: false,
       toggle: false,
-      runtimeTranscription: "",
+      runtimeTranscription: "Transcription text here",
       sentences: [],
     };
   },
@@ -141,11 +142,4 @@ export default {
 </script>
 
 <style>
-.speechCard {
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  text-align:center;
-}
-
 </style>
